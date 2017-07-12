@@ -1,4 +1,4 @@
-from Matrix import Matrix
+from matrix import Matrix
 
 b = Matrix([[1,3,5], [2,4,6]])
 b.printMatrix()
