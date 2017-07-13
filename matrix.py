@@ -1,11 +1,13 @@
 class Matrix(object):
   def __init__(self, matrix):
-    self.matrix = matrix
-    self.rows = len(matrix)
     if (type(matrix[0]) is list):
+      self.matrix = matrix
+      self.rows = len(matrix)
       self.cols = len(matrix[0])
     else:
-      self.cols = 1
+      self.matrix = [matrix]
+      self.rows = len(self.matrix)
+      self.cols = len(self.matrix[0])
 
   def is_vector(self):
     return self.rows == 1 or self.cols == 1
@@ -22,9 +24,6 @@ class Matrix(object):
       print ""
 
   def transpose(self):
-    # if self.is_vector():
-
-
     new_matrix = []
     for i in range(0, self.cols):
       new_matrix.append([])
