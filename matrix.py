@@ -7,7 +7,10 @@ class Matrix(object):
     else:
       self.cols = 1
 
-  def printMatrix(self):
+  def is_vector(self):
+    return self.rows == 1 or self.cols == 1
+
+  def print_matrix(self):
     print "Matrix: {0}x{1}".format(self.rows, self.cols)
     for i in range(0, self.rows):
       print " ",
@@ -19,6 +22,9 @@ class Matrix(object):
       print ""
 
   def transpose(self):
+    # if self.is_vector():
+
+
     new_matrix = []
     for i in range(0, self.cols):
       new_matrix.append([])

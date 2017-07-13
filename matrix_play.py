@@ -1,15 +1,19 @@
 from matrix import Matrix
 
 b = Matrix([[1,3,5], [2,4,6]])
-b.printMatrix()
+b.print_matrix()
 
 c = Matrix([[1,2,3], [4,5,6]])
 
 d = Matrix([[2,2], [2,2], [2,2]])
-d.printMatrix()
+d.print_matrix()
 
 e = b.transpose()
-e.printMatrix()
+e.print_matrix()
 
 f = Matrix.identity(4)
-f.printMatrix()
+f.print_matrix()
+
+g = Matrix([[1],[2]])
+g.print_matrix()
+g.transpose().print_matrix()
