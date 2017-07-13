@@ -56,6 +56,23 @@ class TestMatrix(unittest.TestCase):
     transpose = [[1,2,3,4]]
     self.assertEqual(original.transpose().matrix, transpose)
 
+  def test_zeros(self):
+    original = Matrix.zeros(2,3)
+    self.assertEqual(original.matrix, [[0,0,0],[0,0,0]])
+
+    original = Matrix.zeros(1,5)
+    self.assertEqual(original.matrix, [[0,0,0,0,0]])
+
+    original = Matrix.zeros(5,1)
+    self.assertEqual(original.matrix, [[0],[0],[0],[0],[0]])
+
+  def test_scale(self):
+    original = Matrix([1,2,3,4])
+    self.assertEqual(original.scale(2).matrix, [[2,4,6,8]])
+
+    original = Matrix([[1,2,3], [4,5,6]])
+    self.assertEqual(original.scale(.5).matrix, [[.5,1,1.5], [2,2.5,3]])
+
 def main():
   unittest.main()
 

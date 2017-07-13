@@ -31,9 +31,22 @@ class Matrix(object):
         new_matrix[i].append(self.matrix[j][i])
     return Matrix(new_matrix)
 
-  # def scale(self, scalar):
-  #   new_matrix = []
-  #   for i in range(0, self.rows):
+  def scale(self, scalar):
+    new_matrix = []
+    for i in range(0, self.rows):
+      new_matrix.append([])
+      for j in range(0, self.cols):
+        new_matrix[i].append(self.matrix[i][j] * scalar)
+    return Matrix(new_matrix)
+
+  @staticmethod
+  def zeros(rows, cols):
+    zeros_matrix = []
+    for i in range(rows):
+      zeros_matrix.append([])
+      for j in range(cols):
+        zeros_matrix[i].append(0)
+    return Matrix(zeros_matrix)
 
   @staticmethod
   def identity(size):
